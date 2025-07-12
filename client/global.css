@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 355 100% 99%;
+    --foreground: 345 30% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 345 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 30% 12%;
+
+    --primary: 345 75% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 345 15% 92%;
+    --secondary-foreground: 345 30% 12%;
+
+    --muted: 345 15% 96%;
+    --muted-foreground: 345 8% 46%;
+
+    --accent: 50 100% 85%;
+    --accent-foreground: 345 30% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 345 25% 88%;
+    --input: 345 25% 94%;
+    --ring: 345 75% 35%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 345 75% 35%;
+    --info-foreground: 0 0% 100%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 345 50% 12%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 345 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 345 45% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 345 30% 25%;
+    --sidebar-ring: 345 80% 50%;
+  }
+
+  .dark {
+    --background: 345 45% 8%;
+    --foreground: 345 15% 92%;
+
+    --card: 345 45% 10%;
+    --card-foreground: 345 15% 92%;
+
+    --popover: 345 45% 10%;
+    --popover-foreground: 345 15% 92%;
+
+    --primary: 345 75% 55%;
+    --primary-foreground: 345 45% 8%;
+
+    --secondary: 345 45% 14%;
+    --secondary-foreground: 345 15% 85%;
+
+    --muted: 345 45% 12%;
+    --muted-foreground: 345 8% 65%;
+
+    --accent: 50 100% 75%;
+    --accent-foreground: 345 45% 8%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 345 45% 16%;
+    --input: 345 45% 14%;
+    --ring: 345 75% 55%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 345 75% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --sidebar-background: 345 50% 8%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 345 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 345 45% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 345 30% 20%;
+    --sidebar-ring: 345 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  .sidebar-text {
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .card {
+    @apply shadow-sm border-border/50;
+  }
+
+  .card:hover {
+    @apply shadow-md transition-shadow duration-200;
+  }
+
+  .professional-card {
+    @apply bg-card border border-border/60 shadow-sm rounded-lg;
+    backdrop-filter: blur(8px);
+  }
+}
